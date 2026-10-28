@@ -1,0 +1,400 @@
+/* CanaimaFlix - Estructura de Layout Principal */
+
+#app-root {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg-main);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   1. SIDEBAR IZQUIERDO
+   ========================================================================== */
+#sidebar {
+  width: var(--sidebar-width);
+  min-width: var(--sidebar-width);
+  height: 100%;
+  background-color: var(--bg-surface);
+  border-right: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  padding: 18px 16px;
+  user-select: none;
+  z-index: var(--z-sidebar);
+}
+
+/* Logotipo */
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  padding: 6px 10px 18px 8px;
+  border-bottom: 1px solid var(--border-subtle);
+  margin-bottom: 16px;
+}
+
+.sidebar-logo .logo-icon {
+  width: 32px;
+  height: 32px;
+  color: var(--accent-primary);
+  margin-right: 10px;
+}
+
+.sidebar-logo .logo-text {
+  font-size: var(--font-md);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--text-primary);
+  line-height: 1.1;
+}
+
+.sidebar-logo .logo-sub {
+  font-size: var(--font-xs);
+  color: var(--text-muted);
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* Navegación Principal */
+.nav-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-size: var(--font-base);
+  font-weight: 500;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  margin-bottom: 6px;
+}
+
+.nav-item .nav-icon {
+  width: 18px;
+  height: 18px;
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.nav-item:hover {
+  background-color: var(--bg-pill);
+  color: var(--text-primary);
+}
+
+.nav-item.active {
+  background-color: var(--bg-pill-active);
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Sección Acceso Rápido (Fast Launch) */
+.sidebar-section-title {
+  font-size: var(--font-xs);
+  color: var(--text-muted);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 0 10px;
+  margin-bottom: 10px;
+}
+
+.fast-launch-list {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 12px;
+}
+
+.fast-launch-item {
+  display: flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 4px;
+  transition: background-color 0.15s ease;
+  cursor: pointer;
+}
+
+.fast-launch-item:hover {
+  background-color: var(--bg-card);
+}
+
+.fast-launch-thumb {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-card);
+  margin-right: 10px;
+  object-fit: cover;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+}
+
+.fast-launch-name {
+  font-size: var(--font-sm);
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fast-launch-item:hover .fast-launch-name {
+  color: var(--text-primary);
+}
+
+/* Mini Player / Estado en Sidebar */
+.sidebar-mini-player {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.mini-thumb {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background-color: #000;
+  margin-right: 10px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.mini-info {
+  flex: 1;
+  overflow: hidden;
+  margin-right: 8px;
+}
+
+.mini-title {
+  font-size: var(--font-xs);
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 4px;
+}
+
+.mini-status {
+  font-size: 10px;
+  color: var(--accent-cyan);
+  display: flex;
+  align-items: center;
+}
+
+.mini-status-dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--accent-cyan);
+  border-radius: 50%;
+  margin-right: 4px;
+}
+
+.mini-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 65%;
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-cyan));
+}
+
+/* ==========================================================================
+   2. CONTENIDO PRINCIPAL Y HEADER
+   ========================================================================== */
+#main-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--bg-main);
+  position: relative;
+}
+
+/* Top Bar */
+#top-bar {
+  height: var(--header-height);
+  min-height: var(--header-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  border-bottom: 1px solid var(--border-subtle);
+  background-color: var(--bg-main);
+  z-index: var(--z-header);
+}
+
+.top-bar-left {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  max-width: 460px;
+}
+
+/* Buscador */
+.search-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-full);
+  padding: 6px 14px;
+  transition: border-color 0.2s ease;
+}
+
+.search-container:focus-within {
+  border-color: var(--border-focus);
+}
+
+.search-icon {
+  width: 16px;
+  height: 16px;
+  color: var(--text-muted);
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.search-input {
+  flex: 1;
+  background: transparent;
+  color: var(--text-primary);
+  font-size: var(--font-sm);
+}
+
+.search-input::placeholder {
+  color: var(--text-muted);
+}
+
+.filter-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: var(--text-muted);
+  border-radius: 50%;
+  margin-left: 6px;
+  transition: color 0.15s ease;
+}
+
+.filter-btn:hover {
+  color: var(--text-primary);
+}
+
+/* Acciones en Top Bar */
+.top-bar-right {
+  display: flex;
+  align-items: center;
+}
+
+.icon-action-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  margin-left: 10px;
+  position: relative;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.icon-action-btn:hover {
+  background-color: var(--bg-card-hover);
+  color: var(--text-primary);
+}
+
+.badge-count {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  background-color: var(--accent-primary);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Píldora de Perfil / Dispositivo */
+.profile-pill {
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-full);
+  padding: 4px 12px 4px 5px;
+  margin-left: 14px;
+  cursor: pointer;
+}
+
+.profile-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-purple));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: var(--font-xs);
+  margin-right: 8px;
+}
+
+.profile-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-name {
+  font-size: var(--font-xs);
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.1;
+}
+
+.profile-device {
+  font-size: 10px;
+  color: var(--accent-cyan);
+}
+
+/* Área de Contenido Principal */
+#content-area {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 16px 24px 40px;
+  position: relative;
+}
+
+/* Bottom Nav Bar (Oculto en horizontal) */
+#bottom-nav {
+  display: none;
+}

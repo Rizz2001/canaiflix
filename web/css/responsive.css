@@ -1,0 +1,172 @@
+/* CanaimaFlix - Estilos Responsive Bidireccionales (Landscape 1280x800 y Portrait 800x1280) */
+
+/* ==========================================================================
+   1. MODO VERTICAL / TABLET PORTRAIT (<= 850px)
+   ========================================================================== */
+@media screen and (max-width: 850px) {
+  /* Sidebar en modo Off-Canvas Deslizable */
+  #sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    transform: translateX(-100%);
+    transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.7);
+    z-index: var(--z-sidebar);
+  }
+
+  #sidebar.open {
+    transform: translateX(0);
+  }
+
+  /* Backdrop oscuro cuando el sidebar está abierto */
+  #sidebar-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: calc(var(--z-sidebar) - 1);
+  }
+
+  #sidebar-backdrop.active {
+    display: block;
+  }
+
+  /* Mostrar botón menú hamburguesa en Top Bar */
+  .btn-hamburger {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-sm);
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-card);
+    color: var(--text-primary);
+    margin-right: 12px;
+    flex-shrink: 0;
+  }
+
+  /* Padding inferior para que el Bottom Nav no tape las tarjetas */
+  #content-area {
+    padding-bottom: 80px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* Bottom Navigation Bar Fija para Tablets en Vertical */
+  #bottom-nav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: var(--bottom-nav-height);
+    background-color: var(--bg-surface);
+    border-top: 1px solid var(--border-subtle);
+    z-index: var(--z-header);
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 8px;
+  }
+
+  .bottom-nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    height: 100%;
+    color: var(--text-muted);
+    font-size: var(--font-xs);
+    font-weight: 500;
+    transition: color 0.15s ease;
+  }
+
+  .bottom-nav-item .nav-icon {
+    width: 20px;
+    height: 20px;
+    margin-bottom: 2px;
+  }
+
+  .bottom-nav-item.active {
+    color: var(--accent-primary);
+    font-weight: 700;
+  }
+
+  /* Ajustes del Hero Banner en Vertical */
+  .hero-container {
+    height: 210px;
+    margin-bottom: 18px;
+  }
+
+  .hero-card {
+    width: 92vw;
+    height: 200px;
+  }
+
+  .hero-card.prev,
+  .hero-card.next {
+    display: none; /* En vertical ocultamos tarjetas previas/siguientes para no sobrecargar el layout */
+  }
+
+  .hero-title {
+    font-size: var(--font-lg);
+  }
+
+  .hero-desc {
+    max-width: 100%;
+    -webkit-line-clamp: 1;
+  }
+
+  /* Reducción ergonómica de tarjetas */
+  .media-card {
+    width: 160px;
+  }
+
+  .card-poster {
+    width: 160px;
+    height: 95px;
+  }
+
+  .cards-track > .media-card {
+    margin-right: 12px;
+  }
+
+  /* Ocultar detalles no esenciales en Top Bar */
+  .profile-details {
+    display: none;
+  }
+}
+
+/* ==========================================================================
+   2. PANTALLAS PEQUEÑAS / MÓVIL (<= 520px)
+   ========================================================================== */
+@media screen and (max-width: 520px) {
+  #top-bar {
+    padding: 0 12px;
+  }
+
+  .search-container {
+    padding: 5px 10px;
+  }
+
+  .icon-action-btn {
+    width: 32px;
+    height: 32px;
+    margin-left: 6px;
+  }
+
+  .profile-pill {
+    padding: 2px;
+    margin-left: 6px;
+  }
+
+  .profile-avatar {
+    margin-right: 0;
+  }
+}

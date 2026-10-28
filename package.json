@@ -1,0 +1,23 @@
+{
+  "name": "canaimaflix",
+  "version": "1.0.0",
+  "description": "Ultra-lightweight IPTV & VOD application for Canaima TR10RS1 (Android 4.4.4 KitKat x86)",
+  "main": "scripts/dev-server.js",
+  "scripts": {
+    "start": "node scripts/dev-server.js",
+    "test:ui": "agent-browser open http://localhost:8080 && agent-browser screenshot --full",
+    "test:tablet-resolution": "playwright screenshot --viewport-size=1280,800 http://localhost:8080 tablet_1280x800.png"
+  },
+  "keywords": [
+    "iptv",
+    "m3u",
+    "vod",
+    "canaima",
+    "kitkat",
+    "x86",
+    "low-ram",
+    "virtual-list"
+  ],
+  "author": "Antigravity & User",
+  "license": "MIT"
+}
