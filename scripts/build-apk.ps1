@@ -72,8 +72,14 @@ Copy-Item "$buildDir/canaimaflix.base.apk" "$buildDir/canaimaflix.apk" -Force
 
 Write-Host "APK generada con éxito: $buildDir/canaimaflix.apk" -ForegroundColor Green
 
-# 7. Instalar en la tableta vía ADB
+# 7. Instalar en la tableta vía ADB (USB o Wi-Fi)
 if ($Install) {
+    Write-Host "Comprobando conexión con la tableta Canaima..." -ForegroundColor Cyan
+    $devs = adb devices
+    if ($devs -notmatch "192\.168\.68\.100:5555\s+device" -and $devs -notmatch "[A-Za-z0-9]+\s+device") {
+        Write-Host "Intentando conexión por Wi-Fi a 192.168.68.100:5555..." -ForegroundColor Yellow
+        adb connect 192.168.68.100:5555
+    }
     Write-Host "Instalando APK en la tableta Canaima vía ADB..." -ForegroundColor Cyan
     adb install -r "$buildDir/canaimaflix.apk"
     Write-Host "Lanzando aplicación en la tableta..." -ForegroundColor Green
