@@ -5,6 +5,7 @@
   "main": "scripts/dev-server.js",
   "scripts": {
     "start": "node scripts/dev-server.js",
+    "build:apk": "powershell -ExecutionPolicy Bypass -File scripts/build-apk.ps1",
     "test:ui": "agent-browser open http://localhost:8080 && agent-browser screenshot --full",
     "test:tablet-resolution": "playwright screenshot --viewport-size=1280,800 http://localhost:8080 tablet_1280x800.png"
   },

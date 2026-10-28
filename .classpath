@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="app/src/main/java"/>
+	<classpathentry kind="src" path="build/gen"/>
+	<classpathentry kind="lib" path="D:/proyectos/canaiflix-1/build-tools/android.jar"/>
+	<classpathentry kind="lib" path="D:/proyectos/canaiflix-1/build-tools/libs/annotation-1.3.0.jar"/>
+	<classpathentry kind="lib" path="D:/proyectos/canaiflix-1/build-tools/libs/checker-qual-3.12.0.jar"/>
+	<classpathentry kind="lib" path="D:/proyectos/canaiflix-1/build-tools/libs/exoplayer-common.jar"/>
+	<classpathentry kind="lib" path="D:/proyectos/canaiflix-1/build-tools/libs/exoplayer-core.jar"/>
+	<classpathentry kind="lib" path="D:/proyectos/canaiflix-1/build-tools/libs/exoplayer-database.jar"/>
+	<classpathentry kind="lib" path="D:/proyectos/canaiflix-1/build-tools/libs/exoplayer-datasource.jar"/>
+	<classpathentry kind="lib" path="D:/proyectos/canaiflix-1/build-tools/libs/exoplayer-decoder.jar"/>
+	<classpathentry kind="lib" path="D:/proyectos/canaiflix-1/build-tools/libs/exoplayer-extractor.jar"/>
+	<classpathentry kind="lib" path="D:/proyectos/canaiflix-1/build-tools/libs/exoplayer-hls.jar"/>
+	<classpathentry kind="lib" path="D:/proyectos/canaiflix-1/build-tools/libs/failureaccess-1.0.1.jar"/>
+	<classpathentry kind="lib" path="D:/proyectos/canaiflix-1/build-tools/libs/guava-31.1-android.jar"/>
+	<classpathentry kind="output" path="build/classes"/>
+</classpath>

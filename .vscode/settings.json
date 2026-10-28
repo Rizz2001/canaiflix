@@ -1,0 +1,13 @@
+{
+  "java.configuration.updateBuildConfiguration": "automatic",
+  "java.project.sourcePaths": [
+    "app/src/main/java",
+    "build/gen"
+  ],
+  "java.project.referencedLibraries": [
+    "build-tools/android.jar",
+    "build-tools/libs/*.jar",
+    "D:/proyectos/canaiflix-1/build-tools/android.jar",
+    "D:/proyectos/canaiflix-1/build-tools/libs/*.jar"
+  ]
+}
